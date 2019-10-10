@@ -7,6 +7,7 @@ import InterviewProcessDetail from './Component/InterviewProcessDetail';
 import InterviewRoundDetail from './Component/InterviewRoundDetail';
 import InterviewRoundList from './Component/InterviewRoundList';
 import InterviewRoundFeedback from './Component/InterviewRoundFeedback';
+import GetFeedbackDetails from './Component/GetFeedbackDetails';
 import Login from './Component/Login';
 
 export default class RecruitmentApp extends React.Component {
@@ -23,7 +24,7 @@ export default class RecruitmentApp extends React.Component {
               <li><Link to={"/GetCandidate"} className="nav-link">Get Candidate</Link></li>
               <li><Link to={"/InterviewProcess"} className="nav-link">Get Interview Process</Link></li>
               <li><Link to={"/InterviewRound"} className="nav-link">Get Interview Round</Link></li>
-              <li><Link to={"/InterviewRoundFeedback"} className="nav-link">Get Interview Round Feedback</Link></li>
+              {/* <li><Link to={"/InterviewRoundFeedback"} className="nav-link">Get Interview Round Feedback</Link></li> */}
             </ul>
           </nav>
           <hr />
@@ -35,7 +36,8 @@ export default class RecruitmentApp extends React.Component {
             <Route exact path='/InterviewRound' component={InterviewRoundList} />
             <Route exact path='/InterviewRoundFeedback/:interviewRoundId' component={InterviewRoundFeedback} />
             <Route exact path='/InterviewRound/:interviewProcessId'  component={InterviewRoundDetail} />
-            <Route exact path='/InterviewProcess/:candidateName/:candidateId'  component={InterviewProcessDetail} />
+            <Route exact path='/InterviewProcess/:candidateName/:candidateId/'  component={InterviewProcessDetail} />
+            <Route exact path='/GetFeedbackDetails/:interviewProcessId'  component={GetFeedbackDetails} />
           </Switch>
         </div>
       </Router>

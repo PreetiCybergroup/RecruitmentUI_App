@@ -36,13 +36,13 @@ export default class InterviewRound extends Component {
             headers: {'Content-Type':'application/json'},
             body: JSON.stringify( {'interviewProcessId': this.params.interviewProcessId,
             'interviewerId': this.state.interviewer,
-            'interviewRoundId': this.state.interviewRound,
+            'interviewRoundTypeId': this.state.interviewRound,
             'feedbackId': this.state.feedback,
             })
         });
       }
 
-   componentDidMount() {
+    componentDidMount() {
         const { match: { params } } = this.props;
         this.params = params;
         axious.get('http://localhost:59599/api/Interviewer')
@@ -71,24 +71,24 @@ export default class InterviewRound extends Component {
                     </select>) : (<p></p>)}
                 <label className="Select Interview Round">Select Interview Round </label>
                 <select className="custom-select" name="interviewRound" onChange={this.onRoundChanged}>
-                    <option value= "0">None</option>
-                    <option value= "1">Telephonic</option>
-                    <option value= "2">GroupDiscussion</option>
-                    <option value= "3">1-Technical</option>
-                    <option value= "4">2-Technical</option>
-                    <option value= "5">HR</option>
-                    <option value= "6">Additional</option>
+                    <option value= "None">None</option>
+                    <option value= "Telephonic">Telephonic</option>
+                    <option value= "GroupDiscussion">GroupDiscussion</option>
+                    <option value= "1-Technical">1-Technical</option>
+                    <option value= "2-Technical">2-Technical</option>
+                    <option value= "HR">HR</option>
+                    <option value= "Additional">Additional</option>
                 </select>
                 <br />
                 <br />
                 <label className="Select Feedback">Select Feedback </label>
                 <select className="custom-select" name="feedback" onChange={this.onRoundChanged}>
-                    <option value= "1">None </option>
-                    <option value= "2">2-Technical</option>
-                    <option value= "3">3-Technical</option>
-                    <option value= "4">Selected</option>
-                    <option value= "5">Rejected</option>
-                    <option value= "6">Additional</option>
+                    <option value= "None">None </option>
+                    <option value= "2-Technical">2-Technical</option>
+                    <option value= "3-Technical">3-Technical</option>
+                    <option value= "Selected">Selected</option>
+                    <option value= "Rejected">Rejected</option>
+                    <option value= "Additional">Additional</option>
                 </select>
                 <br />
                 <br />

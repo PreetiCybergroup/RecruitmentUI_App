@@ -23,10 +23,14 @@ export default class InterviewProcessList extends Component {
                     isLoading: false
                 }))
       }
+    
+      
+      
     render() {
-        console.log("Hello", this.props);
+        
         return (
             <div className="container">
+                <h2>Interview Process List</h2>
                 <div className="row">
                     <div className="col-md-6 col-md-offset-5">
                         {/* <input type="button" value="Check List" onClick={this.handleSubmit}></input> */}

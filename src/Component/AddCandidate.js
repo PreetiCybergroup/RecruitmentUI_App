@@ -49,7 +49,10 @@ export default class AddCandidate extends Component {
             'dateofbirth': this.state.dateofbirth,
             'keyword': this.state.keyword,
             'resume': this.state.base64_file,
-            'filename': this.state.resume.name})
+            'filename': this.state.resume.name,
+            'technicalSkills': this.state.technicalSkills,
+            'experience': this.state.experience
+          })
             
         });
       }
@@ -77,8 +80,8 @@ export default class AddCandidate extends Component {
                 <label className="Resume">Select Resume</label>
                 <br />
                 <input type="file" name="resume" onChange={this.onHandleUpload}></input>
-                <br />
-                <input type="button" value="submit" onClick={this.onHandleSubmit}></input>
+                
+                <input type="button" style={{ marginRight: "auto" }} value="submit" onClick={this.onHandleSubmit}></input>
                 </form>
             </div>
         );

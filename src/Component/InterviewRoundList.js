@@ -37,10 +37,10 @@ export default class InterviewRoundList extends Component {
     render() {
         return (
             <div className="container">
+                <h2>Interview Round</h2>
                 <div className="row">
                     <div className="col-md-6 col-md-offset-5">
-                        {/* <input type="button" value="Check List" onClick={this.handleSubmit}></input> */}
-
+                        
                         {(!this.state.isLoading) ?
                             (
                                 <table>
@@ -50,6 +50,7 @@ export default class InterviewRoundList extends Component {
                                             <th>interviewer Name</th>
                                             <th>Feedback</th>
                                             <th>Add Feedback</th>
+                                            <th>View Feedback</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -74,6 +75,8 @@ export default class InterviewRoundList extends Component {
                     <td>{item.interviewerName}</td>
                     <td>{item.feedbackId}</td>
                     <td><button><Link to={`/InterviewRoundFeedback/${item.id}`} className="nav-link"> Add Feedback </Link></button>
+                    </td>
+                    <td><button><Link to={`/GetFeedbackDetails/${item.interviewProcessId}`} className="nav-link"> View Feedback </Link></button>
                     </td>
                 </tr>
             );

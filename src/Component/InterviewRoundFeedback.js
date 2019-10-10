@@ -7,11 +7,10 @@ export default class InterviewRoundFeedback extends Component {
         {
             this.state = {
                 "InterviewRoundId": "",
-                "TechnicalSkills": "",
-                "NonTechnicalSkills": "",
-                "Comments": "",
-                "AreaOfConcern": ""
-
+                "technicalSkills": "",
+                "nonTechnicalSkills": "",
+                "comments": "",
+                "areaOfConcern": ""
             }
 
         }
@@ -26,7 +25,6 @@ export default class InterviewRoundFeedback extends Component {
     async postData() {
         const { match: { params } } = this.props;
         this.params = params;
-        console.log(this.state);
         fetch("http://localhost:59599/api/InterviewRoundFeedback", {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
@@ -43,15 +41,14 @@ export default class InterviewRoundFeedback extends Component {
         return (
             <form>
                 <label>Technical Skills</label>
-                <input type="text" name="technicalSkills" onChange={this.handleChange} ></input>
+                <input type="text" name="technicalSkills" onChange={this.onChange} ></input>
                 <label>Non Technical Skills</label>
-                <input type="text" name="nonTechnicalSkills" onChange={this.handleChange}></input>
+                <input type="text" name="nonTechnicalSkills" onChange={this.onChange}></input>
                 <label>Comments</label>
-                <input type="text" name="comments" onChange={this.handleChange}></input>
+                <input type="text" name="comments" onChange={this.onChange}></input>
                 <label>Area of Concerns</label>
-                <input type="text" name="areaofConcerns" onChange={this.handleChange}></input>
+                <input type="text" name="areaOfConcern" onChange={this.onChange}></input>
                 <button onClick={this.addFeedback}>Submit Feedback</button>
-
             </form>
         );
     }
